@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income & Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <section class="welcome">
+            <div>
+                <p class="subtitle">PERSONAL FINANCE DASHBOARD</p>
+                <h1>Welcome to your Dashboard</h1>
+                <p>Manage your money. Track your spending. Save smarter.</p>
+            </div>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="summary">
+
+            <div class="card income-card">
+                <p>Total Income</p>
+                <h2 id="totalIncome">₹0.00</h2>
+                <span>Money received</span>
+            </div>
+
+            <div class="card expense-card">
+                <p>Total Expenses</p>
+                <h2 id="totalExpense">₹0.00</h2>
+                <span>Money spent</span>
+            </div>
+
+            <div class="card balance-card">
+                <p>Available Balance</p>
+                <h2 id="balance">₹0.00</h2>
+                <span>Your current savings</span>
+            </div>
+
+        </section>
+
+        <!-- Add Transaction Form -->
+        <section class="content-grid">
+
+            <div class="form-section">
+                <h2>Add Transaction</h2>
+                <p class="section-desc">Enter your income or expenses below.</p>
+
+                <form id="transactionForm">
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description"
+                            placeholder="e.g. Monthly Salary" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount (₹)</label>
+                        <input type="number" id="amount"
+                            placeholder="Enter amount" min="0.01"
+                            step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="type">Transaction Type</label>
+                        <select id="type" required>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="Salary">Salary</option>
+                            <option value="Food">Food</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Education">Education</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+
+                    <p id="errorMessage" class="error-message"></p>
+
+                    <button type="submit" class="add-btn">
+                        + Add Transaction
+                    </button>
+
+                </form>
+            </div>
+
+            <!-- Transaction History -->
+            <div class="history-section">
+
+                <div class="history-header">
+                    <div>
+                        <h2>Recent Transactions</h2>
+                        <p class="section-desc">Your financial activity</p>
+                    </div>
+
+                    <select id="filter">
+                        <option value="all">All</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                </div>
+
+                <div id="transactionList" class="transaction-list">
+                </div>
+
+                <p id="emptyMessage" class="empty-message">
+                    No transactions yet. Start by adding one!
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 PennyWise. Manage your money wisely.</p>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --background: #f7f1e8;
+    --surface: #fffaf3;
+    --text: #302b28;
+    --muted: #877c72;
+    --primary: #c46b4f;
+    --primary-hover: #a9543b;
+    --income: #668b70;
+    --expense: #c46b4f;
+    --border: #e9ded1;
+    --shadow: 0 5px 20px rgba(70, 48, 35, 0.07);
+}
+
+body.dark {
+    --background: #252421;
+    --surface: #34312d;
+    --text: #f8eee4;
+    --muted: #c0b2a4;
+    --primary: #d98769;
+    --primary-hover: #e39a7f;
+    --income: #8dbb96;
+    --expense: #e58b76;
+    --border: #4a443e;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+/* Header */
+
+.header {
+    background: var(--surface);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.theme-btn {
+    background: var(--background);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Main Container */
+
+.container {
+    width: 84%;
+    max-width: 1250px;
+    margin: 40px auto;
+}
+
+/* Welcome Section */
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.welcome h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.welcome p:last-child {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Summary Cards */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 15px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.card h2 {
+    font-size: 28px;
+    margin: 12px 0;
+}
+
+.card span {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.income-card {
+    border-left: 5px solid var(--income);
+}
+
+.expense-card {
+    border-left: 5px solid var(--expense);
+}
+
+.balance-card {
+    border-left: 5px solid #b99b64;
+}
+
+/* Main Content */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.4fr;
+    gap: 25px;
+}
+
+.form-section,
+.history-section {
+    background: var(--surface);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.form-section h2,
+.history-section h2 {
+    font-size: 20px;
+}
+
+.section-desc {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 7px 0 22px;
+}
+
+/* Form */
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.history-header select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--background);
+    color: var(--text);
+    font-family: inherit;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+}
+
+.add-btn {
+    width: 100%;
+    padding: 13px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: var(--primary-hover);
+}
+
+.error-message {
+    color: #d94343;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Transaction History */
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.history-header .section-desc {
+    margin-bottom: 0;
+}
+
+.history-header select {
+    width: auto;
+    cursor: pointer;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.transaction-info h3 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.transaction-info p {
+    color: var(--muted);
+    font-size: 11px;
+    margin-top: 4px;
+}
+
+.transaction-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.transaction-amount {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.income-text {
+    color: var(--income);
+}
+
+.expense-text {
+    color: var(--expense);
+}
+
+.delete-btn {
+    border: none;
+    background: #f7e4df;
+    color: #a94330;
+    padding: 7px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #edc9bf;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 35px 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .container {
+        width: 90%;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    .welcome h1 {
+        font-size: 23px;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .form-section,
+    .history-section {
+        padding: 18px;
+    }
+
+    .history-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .history-header select {
+        width: 100%;
+    }
+
+    .transaction-item {
+        flex-wrap: wrap;
+    }
+
+    .transaction-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
